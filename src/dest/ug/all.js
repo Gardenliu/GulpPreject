@@ -1,0 +1,1 @@
+var oneobject="我是第一个文件里面的内容",twoobject="我是第二个文件里面的内容";

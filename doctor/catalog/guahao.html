@@ -1,0 +1,115 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="大豫网,腾讯大豫网,腾讯?大豫网,腾讯河南频道">
+    <meta name="description" content="大豫网,腾讯大豫网,腾讯?大豫网,腾讯河南频道,">
+    <title>标题</title>
+    <link rel="stylesheet" href="../src/css/common.css?v=1">
+    <style>
+        .headimg{width: 4rem;height: 4rem;margin-right: 1rem}
+        .user-info{width: 86%;margin: 0 auto;font-size: .9rem;}
+        .user-info p{line-height: 4rem}
+        .hdlist{display: flex; flex-flow: row;width: 100%;}
+        .hdlist li{box-sizing: border-box; flex: 1;width: 33.3333%;height: 3rem; float: left;;border-right: 1px solid #ccc;border-bottom: 2px solid #ccc;background-color: #fff;line-height: 3rem;text-align: center;}
+        .hdlist .cur{color: #00AEA4;border-bottom: 2px solid #00AEA4}
+        .hd-user-tit{line-height: 2.5rem;height: 2.5rem;border-bottom: 1px solid #EAEAEA;background-color: #F7F7F7;padding: 0 .5rem;color: #888}
+
+        .hd-info-main{padding: .5rem;overflow: hidden}
+        .list-green span,.list-green strong{color: #00AEA4}
+        .list-gray{color: #888}
+        .list-dated{color: #888}
+        .list-dated strong{color: #CB0000}
+        .hd-info-main .btn{padding: .5rem 1rem}
+
+    </style>
+</head>
+<body>
+<nav>
+    <a href="javascript:history.go(-1)" class="iconfont fl">&#xe603;</a>个人中心
+</nav>
+<div class="block"></div>
+<div class="user-info">
+    <img src="../src/imgs/1.png" alt="" class="headimg fl">
+    <p>微信号：wefdfd</p>
+</div>
+<div class="block"></div>
+<ul class="hdlist">
+    <li class="cur">预约挂号记录</li>
+    <li>常用就诊人</li>
+    <li>报告记录</li>
+</ul>
+<div class="block"></div>
+<div class="hd list-green">
+    <h4 class="hd-user-tit">预约日期：2015/3/22 <strong class="fr">已挂号</strong></h4>
+    <div class="hd-info-main">
+        <p><span>医院：</span>郡县人民医院</p>
+        <p><span>就医医生：</span>苏秦 主任医师</p>
+        <p><span>科室名称：</span>住院科室</p>
+        <p><span>就诊地址：</span>二楼西内诊区</p>
+        <p><span>就诊人姓名：</span>王某某</p>
+        <p><span>预约密码：</span><span class="fc-red">454622(平此前去分诊台挂号)</span></p>
+        <p><span>诊查费：</span>5.00元</p>
+        <div class="block"></div>
+        <p class="block-line"></p>
+        <div class="block"></div>
+        <div class="btn fr fc-gray cancel" onclick="cancalCallBack(this,1)">取消预约</div>
+    </div>
+</div>
+<div class="block"></div>
+<div class="hd list-gray">
+    <h4 class="hd-user-tit">预约日期：2015/3/22 <strong class="fr">已就诊</strong></h4>
+    <div class="hd-info-main">
+        <p><span>医院：</span>郡县人民医院</p>
+        <p><span>就医医生：</span>苏秦 主任医师</p>
+        <p><span>科室名称：</span>住院科室</p>
+        <p><span>就诊地址：</span>二楼西内诊区</p>
+        <p><span>就诊人姓名：</span>王某某</p>
+        <div class="block"></div>
+
+    </div>
+</div>
+<div class="block"></div>
+<div class="hd list-dated">
+    <h4 class="hd-user-tit">预约日期：2015/3/22 <strong class="fr">已过期</strong></h4>
+    <div class="hd-info-main">
+        <p><span>医院：</span>郡县人民医院</p>
+        <p><span>就医医生：</span>苏秦 主任医师</p>
+        <p><span>科室名称：</span>住院科室</p>
+        <p><span>就诊地址：</span>二楼西内诊区</p>
+        <p><span>就诊人姓名：</span>王某某</p>
+        <div class="block"></div>
+        <p class="block-line"></p>
+        <div class="block"></div>
+        <div class="btn fr fc-gray delete" onclick="deleteCallBack(this,2)">删除信息</div>
+    </div>
+</div>
+<div class="block"></div>
+<div class="block"></div>
+<div class="block"></div>
+<div class="block"></div>
+<div class="user-footer">
+    <span class="fl"><i class="iconfont">&#xe60c;</i>&nbsp;首页</span>
+    <span class="fr"><i class="iconfont">&#xe60d;</i>&nbsp;个人中心</span>
+</div>
+<script src="../src/js/g-alert.js"></script>
+<script>
+ function cancalCallBack(obj,id){
+    //通过传至，处理该元素id数据
+     //TODO id条目数据处理
+     new alertTips(
+             {state:1,tit:"取消成功",btnName:"确定"}
+     )
+ }
+ function deleteCallBack(obj,id){
+     //通过传至，处理该元素id数据
+     //TODO id条目数据处理
+     new alertTips(
+             {state:1,tit:"删除成功",btnName:"确定"}
+     )
+ }
+</script>
+</body>
+</html>

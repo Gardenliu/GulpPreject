@@ -1,0 +1,86 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="keywords" content="大豫网,腾讯大豫网,腾讯?大豫网,腾讯河南频道">
+    <meta name="description" content="大豫网,腾讯大豫网,腾讯?大豫网,腾讯河南频道,">
+    <title>标题</title>
+    <link rel="stylesheet" href="../src/css/common.css?v=1">
+    <style>
+        .content{width: 96%;margin: 0 auto;}
+        .content p{line-height: 2rem;}
+        .table{overflow: hidden;}
+        .table .tit{display: flex;display: -webkit-flex;font-size: .9rem}
+        .table .tit li{ flex: auto;-webkit-flex: auto;text-align: center}
+        .table-main{width: 100%;font-size: .8rem;line-height: 1.8rem;border-top: 1px solid #cccccc; border-left: 1px solid #ccc;}
+        .table-main tr td{ border-bottom: 1px solid #ccc;text-align: center;border-right: 1px solid #ccc;border-top: 0;border-left: 0}
+    </style>
+</head>
+<body>
+<nav>
+    <a href="#" class="iconfont fl">&#xe603;</a>医疗平台
+</nav>
+<div class="block"></div>
+<div class="content">
+    <p><span class="fc-green">检测号：</span>12323534545</p>
+    <p><span class="fc-green">样本接受时间：</span>2015.10.15</p>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="table">
+        <table class="table-main">
+            <tr class="fc-green">
+                <td>序号</td>
+                <td>英文缩写</td>
+                <td style="width: 5rem">项目</td>
+                <td>结果</td>
+                <td>参考范围</td>
+                <td>单位</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>WBC</td>
+                <td>白细胞数目</td>
+                <td>2.45↓</td>
+                <td>4--10</td>
+                <td>10*9/L</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>WBC</td>
+                <td>白细胞数目</td>
+                <td>2.45↓</td>
+                <td>4--10</td>
+                <td>10*9/L</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>WBC</td>
+                <td>白细胞数目</td>
+                <td>2.45↓</td>
+                <td>4--10</td>
+                <td>10*9/L</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script>
+    function sprint(obj){
+        var parEle=obj.parentElement.children[0],
+                tarHeight=parEle.scrollHeight;
+        if(parEle.style.cssText==''){
+            //隐藏状态
+            parEle.style.height=tarHeight;
+            obj.innerHTML='收起';
+            obj.className='sprint iconfont icon-fold fr';
+        }else{
+            parEle.style.cssText='';
+            obj.innerHTML='展开';
+            obj.className='sprint iconfont icon-unfold fr';
+        }
+    }
+</script>
+</body>
+</html>
