@@ -11,11 +11,12 @@
  * )
  * 如果state为0，icon为X，其他情况为对号
  * */
-function alertTips(json){
+function alertTips(json,fn){
     if(json.tit.toString()=="undefined" || json.btnName.toString()=="undefined"||json.state.toString()=="undefined") return false;
     this.icon=json.state;
     this.title=json.tit;
     this.btn=json.btnName;
+    this.fn=fn;
     this.iconcode=this.icon?'&#xe600;':'&#xe601;';//如果有其他icon，可根据情况替换
     this.init();
 }
@@ -31,7 +32,7 @@ alertTips.prototype={
     createEle:function(btn){
         var html;
         if(btn instanceof Array){
-            html='<div class="alert-main"><h4 class="alert-more-line" style="padding-top: .8rem;font-size: .9rem">'+this.title+'</h4> <p class="fc-green" style="padding:.8rem"> <a href="'+this.btn[0]['link']+'" class="btn fl bg-gray fc-white" style="width: 43%">'+this.btn[0]['name']+'</a> <a href="'+this.btn[1]['link']+'" class="btn fr fc-white bg-green" style="width: 43%">'+this.btn[1]['name']+'</a> </p>';
+            html='<div class="alert-main"><h4 class="alert-more-line" style="padding-top: .8rem;font-size: .9rem">'+this.title+'</h4> <p class="fc-green" style="padding:.8rem"> <a class="btn fl bg-gray fc-white" style="width: 43%">'+this.btn[0]+'</a> <a  class="btn fr fc-white bg-green" style="width: 43%">'+this.btn[1]+'</a> </p>';
         }else{
             html='<div class="alert-main"><h4><i class="iconfont fc-green">'+this.iconcode+'</i>'+this.title+'</h4> <p class="fc-green">'+this.btn+'</p></div>';
         }
@@ -39,9 +40,24 @@ alertTips.prototype={
     },
     btnAction:function(obtn){
         var _this=this;
-        obtn.addEventListener('click',function(ev){
-            if(ev.target.nodeName!='P') return false;
-            typeof _this.btn =='string' && document.body.removeChild(this);
+        var objBtn=obtn.querySelector('p.fc-green');
+        objBtn.addEventListener('click',function(ev){
+            if(this.children.length==0) {
+                if(typeof _this.fn=='function'){
+                    _this.fn(true);
+                    document.body.removeChild(obtn);
+                };
+            }
+            else{
+                if(typeof _this.fn!='function') return false;
+                    if(ev.target.classList.contains('fl')){
+                        _this.fn(false);
+                        document.body.removeChild(obtn);
+                    }else if(ev.target.classList.contains('fr')){
+                        _this.fn(true);
+                        document.body.removeChild(obtn);
+                    }
+            }
         })
     }
 }
